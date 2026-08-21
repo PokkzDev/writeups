@@ -12,6 +12,7 @@ Practical security & homelab writeups: procedures, fixes, and hardware liberatio
 
 | Writeup | Fecha |
 |---|---|
+| [Port Security en Cisco: Mitigación de MAC flooding](es/cisco-port-security-mac-flooding.md): bloqueando el flooding de macof con seguridad de puerto | 2026-08-19 |
 | [Liberación del CPE de Mundo Pacífico: Desactivación de TR-069 + Bridge manual](es/mundo-pacifico-router-liberation.md): corriendo contra el sistema de aprovisionamiento del ISP, eliminando el canal CWMP y poniendo el ONT en bridge | 2026-08-05 |
 | [GP77 13VG: Arreglo del zumbido de audio en Ubuntu](es/gp77-ubuntu-audio-buzz-fix.md): forzando el driver Intel HDA legacy para eliminar el zumbido al arrancar | 2026-08-05 |
 
@@ -19,6 +20,7 @@ Practical security & homelab writeups: procedures, fixes, and hardware liberatio
 
 | Writeup | Date |
 |---|---|
+| [Cisco Port Security: MAC Flooding Mitigation](en/cisco-port-security-mac-flooding.md): blocking macof flooding with switchport security | 2026-08-19 |
 | [Mundo Pacífico CPE Liberation: TR-069 Kill + Manual Bridge](en/mundo-pacifico-router-liberation.md): racing the ISP provisioning system, killing the CWMP channel, and bridging the ONT | 2026-08-05 |
 | [GP77 13VG: Ubuntu Audio Buzz Fix](en/gp77-ubuntu-audio-buzz-fix.md): forcing the legacy Intel HDA driver to kill boot buzzing | 2026-08-05 |
 
