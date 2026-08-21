@@ -1,12 +1,12 @@
-# GP77 13VG — Ubuntu Audio Buzz Fix (`snd_intel_dspcfg.dsp_driver=1`)
+# GP77 13VG: Ubuntu Audio Buzz Fix (`snd_intel_dspcfg.dsp_driver=1`)
 
 - **Date:** 2026-08-05
-- **Source:** Luis — hands-on fix on the GP77 13VG (i7-13700H + RTX 4070), Ubuntu. Verified live.
-- **Status:** Working — loud buzzing at boot gone.
+- **Source:** Luis, hands-on fix on the GP77 13VG (i7-13700H + RTX 4070), Ubuntu. Verified live.
+- **Status:** Working. Loud buzzing at boot is gone.
 
 ## Symptom
 
-Loud buzzing/static noise when booting Ubuntu on the GP77 13VG. Root cause: the Intel audio stack — SOF (Sound Open Firmware) DSP driver vs legacy HDA — misbehaving on this hardware.
+Loud buzzing/static noise when booting Ubuntu on the GP77 13VG. Root cause: the Intel audio stack misbehaving on this hardware (SOF Sound Open Firmware DSP driver vs legacy HDA).
 
 ## Fix
 
@@ -41,4 +41,4 @@ Reboot. Buzz should be gone.
 ## Notes
 
 - If the OS is reinstalled or a kernel/grub update rewrites the cmdline, the parameter must be re-added.
-- This is the GP77 **gaming laptop** — not a homelab node. Do not confuse with the Proxmox box.
+- This is the GP77 **gaming laptop**, not a homelab node. Do not confuse it with the Proxmox box.
