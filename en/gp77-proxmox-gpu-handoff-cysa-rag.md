@@ -6,16 +6,16 @@
 
 ## Goal
 
-I wanted a separate AI study lab for CySA+ without giving up my existing ComfyUI VM. Both VMs should use the laptop's RTX 4070, just never at the same time.
+I wanted a separate AI study lab for CySA+ without disrupting another VM already using the laptop's RTX 4070. Both VMs can use the GPU, but not at the same time.
 
 ## What I did
 
-1. **Created VM 305 (`ai-rag`)** with 8 vCPUs, 12 GiB RAM and a 120 GiB virtual disk. VM 300 (`comfyui`) stayed intact.
+1. **Created VM 305 (`ai-rag`)** with 8 vCPUs, 12 GiB RAM and a 120 GiB virtual disk. The other VM using the GPU stayed intact.
 2. **Configured the same VFIO-passed RTX 4070** (GPU and audio PCI functions) on both VMs. I installed Ubuntu Server 26.04.1, NVIDIA driver 595-open and NVIDIA Container Toolkit in VM 305.
 3. **Deployed Ollama, Open WebUI and Qdrant with Docker Compose.** Ollama runs local `qwen3-embedding:4b`; DeepSeek Flash provides the chat model via API.
 4. **Set up `CySA-Lab` RAG** with hybrid search and a local MiniLM reranker. I uploaded a test document, queried its facts with citations and verified vectors were stored in Qdrant.
 5. **Fixed a Docker startup problem.** Open WebUI was binding to my Tailscale IP before it was assigned (exit 128). I switched it to `127.0.0.1:3000` and exposed it privately over HTTPS with Tailscale Serve.
-6. **Switched the GPU `305 → 300 → 305`** using graceful shutdowns. Both guests detected the GPU again without rebooting Proxmox.
+6. **Switched the GPU between the two VMs** using graceful shutdowns. Both guests detected the GPU again without rebooting Proxmox.
 
 ## Results
 

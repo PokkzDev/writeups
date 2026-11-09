@@ -6,16 +6,16 @@
 
 ## Objetivo
 
-Quería montar un laboratorio de IA separado para estudiar CySA+ sin perder mi VM de ComfyUI. La idea era que ambas máquinas virtuales pudieran utilizar la RTX 4070 del portátil, aunque nunca al mismo tiempo.
+Quería montar un laboratorio de IA separado para estudiar CySA+ sin afectar otra VM que ya utilizaba la RTX 4070 del portátil. Ambas VM pueden usar la GPU, pero nunca al mismo tiempo.
 
 ## Qué hice
 
-1. **Creé la VM 305 (`ai-rag`)** con 8 vCPU, 12 GiB de RAM y un disco virtual de 120 GiB. Mantuve intacta la VM 300 (`comfyui`).
+1. **Creé la VM 305 (`ai-rag`)** con 8 vCPU, 12 GiB de RAM y un disco virtual de 120 GiB. Mantuve intacta la otra VM que utiliza la GPU.
 2. **Configuré el passthrough VFIO de la misma RTX 4070** (funciones PCI de vídeo y audio) para ambas VM. En la VM 305 instalé Ubuntu Server 26.04.1, el controlador NVIDIA 595-open y NVIDIA Container Toolkit.
 3. **Desplegué Ollama, Open WebUI y Qdrant con Docker Compose.** Ollama ejecuta localmente `qwen3-embedding:4b`; DeepSeek Flash se encarga del chat mediante su API.
 4. **Configuré el RAG de `CySA-Lab`** con búsqueda híbrida y un reranker MiniLM local. Subí un documento de prueba, consulté sus datos con citas y comprobé que los vectores se almacenaron en Qdrant.
 5. **Corregí un problema de arranque de Docker.** Open WebUI intentaba enlazarse a la IP de Tailscale antes de que estuviera disponible (salida 128). Cambié el enlace a `127.0.0.1:3000` y publiqué el servicio de forma privada por HTTPS mediante Tailscale Serve.
-6. **Transferí la GPU entre las VM (`305 → 300 → 305`)** apagándolas ordenadamente. Ambas volvieron a detectar la GPU sin reiniciar Proxmox.
+6. **Transferí la GPU entre ambas VM** apagándolas ordenadamente. Ambas volvieron a detectar la GPU sin reiniciar Proxmox.
 
 ## Resultados
 
