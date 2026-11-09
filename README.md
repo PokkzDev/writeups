@@ -12,6 +12,7 @@ Practical security & homelab writeups: procedures, fixes, and hardware liberatio
 
 | Writeup | Fecha |
 |---|---|
+| [Homelab GP77: Passthrough de GPU y laboratorio RAG para CySA+](es/gp77-proxmox-gpu-handoff-cysa-rag.md): passthrough VFIO entre dos VM, Ollama, Open WebUI, Qdrant y Tailscale | 2026-11-09 |
 | [SIEM Wazuh: Aprendiendo monitoreo de seguridad en mi homelab](es/wazuh-siem-homelab-learning.md): despliegue de un SIEM open source en Proxmox, enrolamiento de agentes por Tailscale y primeros pasos con CVEs e inicios de sesión fallidos | 2026-08-21 |
 | [Port Security en Cisco: Mitigación de MAC flooding](es/cisco-port-security-mac-flooding.md): bloqueando el flooding de macof con seguridad de puerto | 2026-08-19 |
 | [Liberación del CPE de Mundo Pacífico: Desactivación de TR-069 + Bridge manual](es/mundo-pacifico-router-liberation.md): corriendo contra el sistema de aprovisionamiento del ISP, eliminando el canal CWMP y poniendo el ONT en bridge | 2026-08-05 |
@@ -21,6 +22,7 @@ Practical security & homelab writeups: procedures, fixes, and hardware liberatio
 
 | Writeup | Date |
 |---|---|
+| [GP77 Homelab: GPU Handoff and a CySA+ RAG Lab](en/gp77-proxmox-gpu-handoff-cysa-rag.md): VFIO GPU handoff between VMs, Ollama, Open WebUI, Qdrant and Tailscale | 2026-11-09 |
 | [Wazuh SIEM: Learning Security Monitoring on My Homelab](en/wazuh-siem-homelab-learning.md): deploying an open-source SIEM on Proxmox, enrolling agents over Tailscale, and reading your first CVEs and login failures | 2026-08-21 |
 | [Cisco Port Security: MAC Flooding Mitigation](en/cisco-port-security-mac-flooding.md): blocking macof flooding with switchport security | 2026-08-19 |
 | [Mundo Pacífico CPE Liberation: TR-069 Kill + Manual Bridge](en/mundo-pacifico-router-liberation.md): racing the ISP provisioning system, killing the CWMP channel, and bridging the ONT | 2026-08-05 |
